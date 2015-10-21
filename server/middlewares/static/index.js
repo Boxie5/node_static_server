@@ -1,0 +1,1 @@
+import serve from "koa-static";export default function(path) {	return serve(path);}

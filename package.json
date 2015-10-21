@@ -1,0 +1,38 @@
+{
+  "name": "static_server_template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build:app": "cp src/* dist/",
+    "build": "npm run prebuild && npm run build:app",
+    "start": "node --harmony index.js",
+    "postinstall": "npm run build"
+  },
+  "author": "Bowen",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "bunyan": "^1.5.1",
+    "koa": "^1.0.0",
+    "koa-bodyparser": "^2.0.1",
+    "koa-static": "^1.4.9",
+    "monk": "^1.0.1"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "flightplan": "^0.6.4"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "babel": {
+    "optional": [
+      "es7.comprehensions"
+    ]
+  }
+}
