@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
-    "build:app": "cp src/* dist/",
+    "build:app": "cp -rf src/* dist/",
     "build": "npm run prebuild && npm run build:app",
     "start": "node --harmony index.js",
     "postinstall": "npm run build"
